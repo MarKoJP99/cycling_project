@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>All Products</title>
+</head>
+<body>
+    <h1>All Products</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Price</th>
+            <th>Image</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{ product[0] }}</td>
+            <td>{{ product[1] }}</td>
+            <td>{{ product[2] }}</td>
+            <td>{{ product[3] }}</td>
+            <td><img src="{{ url_for('static', filename='images/' + product[4]) }}" alt="{{ product[1] }}"></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
