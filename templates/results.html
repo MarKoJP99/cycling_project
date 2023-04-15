@@ -1,28 +1,13 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Search Results</title>
-</head>
-<body>
-    <h1>Search Results</h1>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Description</th>
-            <th>Price</th>
-            <th>Image</th>
-        </tr>
-        {% for product in products %}
-        <tr>
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.price }}</td>
-            <td><img src="{{ url_for('static', filename='images/' + product.image) }}" alt="{{ product.name }}"></td>
-        </tr>
-        {% endfor %}
-    </table>
-    <br>
-    <a href="{{ url_for('home') }}">Back</a>
-</body>
-</html>
+  <head>
+    <title>Cycling Website - Results</title>
+  </head>
+  <body>
+    <h1>Results</h1>
+    <ul>
+      {% for result in results %}
+      <li>{{ result["name"] }} - {{ result["description"] }} - ${{ result["price"] }} - {{ result["size"] }}</li>
+      {% endfor %}
+    </ul>
+    <a href="/back">Back</
